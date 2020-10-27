@@ -43,16 +43,17 @@
       <div class="col-2">
         <div class="form-container">
           <div class="form-btn">
-            <span>Login</span>
-            <span>Register</span>
+            <span onclick="Login()">Login</span>
+            <span onclick="Register()">Register</span>
+            <hr id="Indicator">
           </div>
-          <form>
+          <form id="LoginForm">
             <input type="text" placeholder="Username">
             <input type="password" placeholder="password">
             <button type="submit" class="btn">Login</button>
             <a href="">Forgot Password</a>
           </form>
-          <form>
+          <form id="RegForm">
             <input type="text" placeholder="Username">
             <input type="email" placeholder="Email">
             <input type="password" placeholder="password">
@@ -133,6 +134,23 @@
         }
     </script>
 
+<!-------- js for toggle menu---------->
+    <script type="text/javascript">
+      var LoginForm = document.getElementById("LoginForm");
+      var RegForm = document.getElementById("RegForm");
+      var Indicator = document.getElementById("Indicator");
+
+      function Register(){
+        RegForm.style.transform="translateX(0px)";
+        LoginForm.style.transform="translateX(0px)";
+        Indicator.style.transform="translateX(100px)";
+      }
+      function Login(){
+        RegForm.style.transform="translateX(300px)";
+        LoginForm.style.transform="translateX(300px)";
+        Indicator.style.transform="translateX(0px)";
+      }
+    </script>
 
 </body>
 </html>
